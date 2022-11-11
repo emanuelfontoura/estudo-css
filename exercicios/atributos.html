@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores de atributos</title>
+    <style>
+        /* elemento[atributo operador val]
+            elemento = nome do elemento (a, div, span, p, h1, h2, etc)
+
+            atributo = atributo presente no elemento citado
+
+            operador = (=, ~=, *=, ^=, $=)
+                "=" = val for igual ao valor do atributo
+
+                "~=" = val for uma parte do valor do atributo que possui vários itens separados por espaço em branco
+
+                "^=" = o início do valor do atributo for igual a val
+
+                "$=" = o final do valor do atributo for igual a val
+
+                "*=" = valor do elemento contém ao menos 1 ocorrência de val dentro da string, sendo que val n precisa ser uma palavra completa, pode ser apenas um grupo de caracteres
+            
+            val = valor 
+        */
+
+        /* (1) Elementos <a> com href igual a "#" */
+        a[href='#']{
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Elementos <a> com classe que contenha a palavra cl1 */
+        a[class~="cl1"]{
+            color: blue;
+        }
+
+        /*Elementos <div> com ID que contenha a palavra "parte" */
+        div[id*="parte"]{
+            color: greenyellow;
+        }
+
+        a[href*=".org"]{
+            color: goldenrod;
+        }
+
+        /* Elementos <a> com href que termine com .org */
+        a[href$=".org"] {
+            color: aqua;
+        }
+
+        /* Elementos <a> com href que comece com https */
+        a[href^="https"] {
+            font-size: 30px;
+        }
+
+        /* Elementos que pertençam a classe cl1, entre outras */
+        *[class~="cl1"] {
+            color: violet;
+            font-size: 30px;
+        }
+
+        div[id="id1"]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Estilos CSS</h2>   
+
+    <p>Seletor de atributos</p>
+
+    <h2 class="cl1 cl2 cl3">Segunda seção do arquivo HTML</h2>
+
+    <p id="id1">Parágrafo com ID</p>
+
+    <a href="https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal" target="_blank">Wikipedia</a>
+
+    <a href="https://pt.wikipedia.org" target="_blank">Wikipedia 2</a>
+
+    <a href="#" class="cl1 cl2">Site 1</a>
+
+    <a href="#" class="cl2">Site 2</a>
+
+    <p class="par1 cl1">Parágrafo com Classe</p>
+
+    <div id="parte1">Div 01</div>
+    <div id="parte2">Div 02</div>
+    <div id="secao3">Div 03</div>
+    <div id="parte4">Div 04</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body p{
+            color: red;
+        }
+
+        body > p{
+            color: green;
+        }
+
+        div + p{
+            color: yellow;
+        }
+
+        div ~ span {
+            color: blue;
+        }
+
+        section > span > p{
+            color: aquamarine;
+        }
+
+        section > span:nth-of-type(2){
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>OI1</p>
+    </div>
+    <p>OI2</p>
+    <p>OI3</p>
+    <span>
+        OI4
+    </span>
+    <section>
+        <br><span>SPAN1
+                <p>DENTRO SPAN</p>
+            </span><br>
+        <span>SPAN2</span>
+        <p>TESTE1</p>
+        <h1>TESTE2</h1>
+    </section>
+    
+</body>
+</html>
